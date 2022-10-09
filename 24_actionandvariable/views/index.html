@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/assets/main.css">
+        <title>Learning html/template Actions</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td>:</td>
+                <td>{{.Name}}</td>
+            </tr>
+            <tr>
+                {{$gender := .Gender}}
+                <td>Gender</td>
+                <td>:</td>
+                <td>{{$gender}}</td>
+            </tr>
+            <tr>
+                <td>Hobbies</td>
+                <td>:</td>
+                <td>{{range $index, $elem := .Hobbies}}
+                    {{$elem}},
+                    {{end}}
+                </td>
+            </tr>
+            <tr>
+                <td>Affiliation</td>
+                <td>:</td>
+                {{with .Info}}
+                <td>{{.Affiliation}} ({{.GetAffiliationInfo}})</td>
+                {{end}}
+            </tr>
+
+            <tr style="font-weight: bold;">
+                <td>
+                {{if eq .Name "Yulyano Thomas Djaya"}}
+                    My name is Lino 
+                {{else}}
+                    My name is Budi Budiman
+                {{end}}
+            </td>
+            </tr>
+        </table>
+    </body>
+</html>
