@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index page</title>
+</head>
+<body>
+    {{if eq .Name "Saitama"}}
+    <h1>I'm Saitama</h1>
+    {{else if ne .Name "Genos"}}
+    <h1>Superheronya bukan Saitama atau Genos</h1>
+    {{end}}
+
+    <h1>{{.SayHello "Selamat pagi"}}</h1>
+
+    {{$a := true}}
+    {{$b := false}}
+
+    {{if or $a $b}}
+    <h2>Salah satu dari variable a dan b bernilai true</h2>
+    {{end}}
+</body>
+</html>
