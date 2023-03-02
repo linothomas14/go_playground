@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"playground/cases"
 )
 
 func main() {
-	fmt.Println("Hello world")
+	cases.Find_missing_num_in_array()
+
 }
